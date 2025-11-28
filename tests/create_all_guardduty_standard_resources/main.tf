@@ -136,6 +136,16 @@ module "guardduty_standard_resources" {
       }
     }
   }
+
+  detector_feature = {
+    name   = "LAMBDA_NETWORK_LOGS"
+    status = "ENABLED"
+    region = data.aws_region.current.name
+    additional_configuration = {
+      name   = "EC2_AGENT_MANAGEMENT"
+      status = "ENABLED"
+    }
+  }
 }
 
 data "aws_iam_policy_document" "bucket_pol" {
