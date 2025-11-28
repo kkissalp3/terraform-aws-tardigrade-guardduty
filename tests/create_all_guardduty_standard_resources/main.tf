@@ -5,6 +5,7 @@
 # - Creates two GuardDuty threatintelsets for this account
 # - Creates a GuardDuty publishing_destination for this account
 # - Creates a GuardDuty Malware Protection for this account
+# - Creates a GuardDuty Detector Feature for this account
 module "guardduty_standard_resources" {
   source = "../../"
 
