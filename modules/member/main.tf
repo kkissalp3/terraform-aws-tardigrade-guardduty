@@ -73,8 +73,8 @@ resource "aws_guardduty_detector_feature" "this" {
   provider = aws.administrator
 
   detector_id = aws_guardduty_detector.this.id
-  name        = "LAMBDA_NETWORK_LOGS"
-  status      = "ENABLED"
+  name        = var.detector_feature.name
+  status      = var.detector_feature.status
 }
 
 data "aws_guardduty_detector" "administrator" {
